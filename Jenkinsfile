@@ -1,6 +1,6 @@
 pipeline {
 agent {
-label 'Build-server'
+label 'worker-node'
 }
 
 stages {
@@ -35,9 +35,9 @@ stage ('dockerimageBuild')
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/devops28thsep/account-service ; sudo  docker login -uankit1111 -pmiet@1234 "
-        sh "cd /home/ubuntu/workspace/devops28thsep/account-service ; sudo docker tag account-service ankit1111/account-service "
-        sh "cd /home/ubuntu/workspace/devops28thsep/account-service ; sudo docker push ankit1111/account-service  "
+       sh "cd /home/ubuntu/workspace/devops28thsep/account-service ; sudo  docker login -usand3cs -Sandeep$123 "
+        sh "cd /home/ubuntu/workspace/devops28thsep/account-service ; sudo docker tag account-service sand3cs/account-service "
+        sh "cd /home/ubuntu/workspace/devops28thsep/account-service ; sudo docker push sand3cs/account-service  "
         
         
     }
@@ -47,7 +47,7 @@ stage ('dockerimageBuild')
 stage ('k8sdeployment') 
     {
         steps {
-            node (' Ansible-server') {
+            node (' ansible-server') {
              sh " sudo ansible-playbook /root/k8s.yaml"
    
     }

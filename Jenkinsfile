@@ -28,16 +28,16 @@ stage ('dockerimageBuild')
     {
     steps
     {
-        sh "cd /home/ubuntu/workspace/devops28thsep/account-service; sudo docker build -t account-service . " 
+        sh "cd /home/ubuntu/workspace/project/account-service; sudo docker build -t account-service . " 
     }
 }
      stage ('dockerimagepush ') 
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/devops28thsep/account-service ; sudo  docker login -usand3cs -Sandeep$123 "
-        sh "cd /home/ubuntu/workspace/devops28thsep/account-service ; sudo docker tag account-service sand3cs/account-service "
-        sh "cd /home/ubuntu/workspace/devops28thsep/account-service ; sudo docker push sand3cs/account-service  "
+       sh "cd /home/ubuntu/workspace/project/account-service ; sudo  docker login -usand3cs -Sandeep$123 "
+        sh "cd /home/ubuntu/workspace/project/account-service ; sudo docker tag account-service sand3cs/account-service "
+        sh "cd /home/ubuntu/workspace/project/account-service ; sudo docker push sand3cs/account-service  "
         
         
     }

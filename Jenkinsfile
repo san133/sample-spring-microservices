@@ -35,7 +35,7 @@ stage ('dockerimageBuild')
 {
     steps
     {
-       sh "cd /home/ubuntu/workspace/project/customer-service ; sudo  docker login -usand3cs -sandeep1234 "
+       sh "cd /home/ubuntu/workspace/project/customer-service ; sudo  docker login -usand3cs -psandeep1234 "
         sh "cd /home/ubuntu/workspace/project/customer-service ; sudo docker tag customer-service sand3cs/customer-service "
         sh "cd /home/ubuntu/workspace/project/customer-service ; sudo docker push sand3cs/customer-service  "
         

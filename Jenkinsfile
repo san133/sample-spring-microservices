@@ -31,7 +31,7 @@ stage ('dockerimageBuild')
         sh "cd /home/ubuntu/workspace/project/account-service ; sudo docker build -t account-service . " 
     }
 }
-     stage ('dockerimagepush ') 
+     stage ('dockerimagepush') 
 {
     steps
     {
